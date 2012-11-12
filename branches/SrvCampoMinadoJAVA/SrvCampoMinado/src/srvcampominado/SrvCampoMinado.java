@@ -20,6 +20,8 @@ public class SrvCampoMinado
        LocateRegistry.createRegistry(1099);
         Campo campo = new Campo();
         Naming.rebind("Jogo", campo);
+        Bomba nova = new Bomba();
+        nova.conteudoCampo();
         System.out.println("Service ONLINE");
     }  
 }   

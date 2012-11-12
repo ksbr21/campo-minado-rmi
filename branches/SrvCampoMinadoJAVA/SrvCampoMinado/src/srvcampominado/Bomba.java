@@ -6,6 +6,7 @@ package srvcampominado;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.Random;
 
 /**
  *
@@ -20,8 +21,10 @@ public class Bomba extends UnicastRemoteObject implements BombaCampo{
     }
     @Override
     public void conteudoCampo() throws RemoteException {
+        Random gerarBomba = new Random(100);
         this.bomba = new int[5][5];
         
+        System.out.println(gerarBomba);
         
         
     }
