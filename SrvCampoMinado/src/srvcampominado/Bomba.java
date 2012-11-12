@@ -21,6 +21,9 @@ public class Bomba extends UnicastRemoteObject implements BombaCampo{
     @Override
     public void conteudoCampo() throws RemoteException {
         this.bomba = new int[5][5];
+        
+        
+        
     }
     
 }
