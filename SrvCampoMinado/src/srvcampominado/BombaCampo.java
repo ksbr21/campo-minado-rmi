@@ -14,4 +14,5 @@ import java.rmi.RemoteException;
 public interface BombaCampo extends Remote{
     
     public void conteudoCampo() throws RemoteException;
+    public void gerarBombas() throws RemoteException;
 }

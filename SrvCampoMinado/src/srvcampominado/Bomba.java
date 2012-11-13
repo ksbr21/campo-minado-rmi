@@ -14,19 +14,41 @@ import java.util.Random;
  */
 public class Bomba extends UnicastRemoteObject implements BombaCampo{
 
-    private int[][] bomba;
+    private boolean[][] bomba;
     
     public Bomba() throws RemoteException{
         
     }
     @Override
     public void conteudoCampo() throws RemoteException {
-        Random gerarBomba = new Random(100);
-        this.bomba = new int[5][5];
         
-        System.out.println(gerarBomba);
+        this.bomba = new boolean[5][5];
+        for(int i=0;i<5;i++){
+            for(int j = 0;j<5;j++){
+                this.bomba[j][i] = false;
+            }
+        }
         
         
     }
+
+    @Override
+    public void gerarBombas() throws RemoteException {
+        Random sorte = new Random();
+        int number, coluna = 0;
+        
+        for(int i=0;i<5;i++){
+           number = sorte.nextInt(5);
+            if(this.bomba[i][number]!=true){
+                this.bomba[i][number] = true;
+                
+            }else{
+                number = sorte.nextInt(5);
+                this.bomba[i][number] = true;
+            }
+            
+        }
+    }
+    
     
 }
