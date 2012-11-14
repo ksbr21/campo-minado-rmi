@@ -9,10 +9,10 @@ import java.rmi.RemoteException;
 
 /**
  *
- * @author antoniony.celes
+ * @author Elton 2
  */
-public interface BombaCampo extends Remote{
+public interface Grafico extends Remote{
+    public void montarJanela() throws RemoteException;
+    public void finalJogo(Player jogador)throws RemoteException;
     
-    public void conteudoCampo() throws RemoteException;
-    public void gerarBombas(int i) throws RemoteException;
 }

@@ -21,11 +21,15 @@ public class SrvCampoMinado
         Campo campo = new Campo();
         Naming.rebind("Jogo", campo);
         Bomba nova = new Bomba();
-        
+        int numero = 0;
         nova.conteudoCampo();
-       
-        System.out.println("Service ONLINE");
-    }  
+       nova.gerarBombas(numero);
+       System.out.println("Service ONLINE");
+        
+       InterfaceGrafica janela = new InterfaceGrafica();
+       janela.montarJanela();
+  
+  }  
 }   
 /**
  *
