@@ -22,37 +22,40 @@ public class InterfaceGrafica extends UnicastRemoteObject implements Grafico{
     private JPanel panel;
     private JLabel msg;
     private JFrame janela;
-
+ private JButton[][] quadrado;
     public InterfaceGrafica() throws RemoteException{
     }
 
     @Override
     public void montarJanela() {
-        panel = new JPanel();
-        msg = new JLabel("Jogo Campo Minado");
-        janela = new JFrame();
-        panel.add(msg);
-        JButton[][] quadrado = new JButton[5][5];
+        this.panel = new JPanel();
+        this.msg = new JLabel("Jogo Campo Minado");
+        this.janela = new JFrame();
+        this.panel.add(msg);
+        this.quadrado = new JButton[5][5];
        
         int posicaoX = 50;
-        panel = new JPanel();
+        this.panel = new JPanel();
          for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5; j++) {
-           quadrado[i][j] = new JButton(" ");     
-           quadrado[i][j].setSize(50, 50);
-          quadrado[i][j].setBounds(j, posicaoX+posicaoX, 50, 50);
-          panel.add(quadrado[i][j]); 
+           this.quadrado[i][j] = new JButton(" ");     
+           this.quadrado[i][j].setSize(50, 50);
+           this.quadrado[i][j].addActionListener(null);
+          //quadrado[i][j].setBounds(j, posicaoX+posicaoX, 50, 50);
+         
+           this.panel.add(this.quadrado[i][j]); 
+          
           //janela.add();
             }
         }
          
-        panel.setSize(500, 500);
-        janela.setBounds(0, 0, 500, 500);
-        janela.getContentPane().add(panel, BorderLayout.CENTER);
-        janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.panel.setSize(400, 400);
+        this.janela.setBounds(0, 0, 250, 300);
+        this.janela.getContentPane().add(this.panel, BorderLayout.CENTER);
+       this.janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
        
 //        janela.pack();  
-        janela.setVisible(true);
+        this.janela.setVisible(true);
 
     }
 

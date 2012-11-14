@@ -16,6 +16,8 @@ public class Bomba extends UnicastRemoteObject implements BombaCampo {
 
    private boolean[][] bomba;
 
+    
+
    
 
     public Bomba() throws RemoteException {
@@ -48,5 +50,8 @@ public class Bomba extends UnicastRemoteObject implements BombaCampo {
             gerarBombas(i);
         }
         
+    }
+    public boolean[][] getBomba() throws RemoteException{
+        return bomba;
     }
 }
