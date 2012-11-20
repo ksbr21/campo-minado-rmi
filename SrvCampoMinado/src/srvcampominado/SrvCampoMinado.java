@@ -18,16 +18,15 @@ public class SrvCampoMinado
   public static void main(String args[])  
     throws RemoteException,MalformedURLException{  
        LocateRegistry.createRegistry(1099);
-        Campo campo = new Campo();
-        Naming.rebind("Jogo", campo);
-        Bomba nova = new Bomba();
+       Bomba nova = new Bomba();        
+ 
+       Naming.rebind("Bomba", nova);
         int numero = 0;
         nova.conteudoCampo();
        nova.gerarBombas(numero);
        System.out.println("Service ONLINE");
         
-       InterfaceGrafica janela = new InterfaceGrafica();
-       janela.montarJanela();
+       
   
   }  
 }   

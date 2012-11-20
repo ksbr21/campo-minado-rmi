@@ -12,7 +12,7 @@ import java.util.Random;
  *
  * @author antoniony.celes
  */
-public class Bomba extends UnicastRemoteObject implements BombaCampo {
+public class Bomba extends UnicastRemoteObject implements IBomba {
 
    private boolean[][] bomba;
 
@@ -51,7 +51,14 @@ public class Bomba extends UnicastRemoteObject implements BombaCampo {
         }
         
     }
-    public boolean[][] getBomba() throws RemoteException{
-        return bomba;
+
+    @Override
+    public boolean verificarCampo(int linha, int coluna) throws RemoteException {
+        if(this.bomba[linha][coluna]==true){
+            return true;
+        }else {
+            return false;
+        }
     }
+    
 }
