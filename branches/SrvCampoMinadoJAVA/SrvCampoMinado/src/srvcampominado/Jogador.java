@@ -12,7 +12,7 @@ import java.rmi.server.UnicastRemoteObject;
  *
  * @author Elton 2
  */
-public class Jogador extends UnicastRemoteObject implements Player{
+public class Jogador extends UnicastRemoteObject implements IJogador{
     private String nome;
     private Boolean estado;
     private int pontuacao;
@@ -21,6 +21,19 @@ public class Jogador extends UnicastRemoteObject implements Player{
     }
 
     
+    
+    @Override
+    public void contarPontos() throws RemoteException {
+       
+        this.pontuacao+=10;
+    }
+
+    @Override
+    public int totalPontos() throws RemoteException {
+        return this.pontuacao;
+    }
+
+   
     
     
 }
